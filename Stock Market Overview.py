@@ -106,9 +106,8 @@ for ticker in index_tickers:
     ticker_list = list([weekly, monthly,quarterly, annually])
     data.append(ticker_list)
     
-    
-    
-    
+#******************************************************    
+
 index_tickers_list = ['SP500', 'NQ 100', 'RS 2k','ES 600', 'DAX','F-MIB','EUR/USD', 'DolIdx', 'TNote10Y', 'BTP10Y', 'CrudeOil', 'Gold']
 
 index_percentages = ['WTD', 'MTD','QTD','YTD']
@@ -116,6 +115,9 @@ index_percentages = ['WTD', 'MTD','QTD','YTD']
 index_overview = pd.DataFrame(data, index_tickers_list, index_percentages)
 
 index_tickers_tpl = ('SP500', 'NQ 100', 'RS 2k','ES 600', 'DAX','F-MIB','EUR/USD', 'DolIdx', 'TNote10Y', 'BTP10Y', 'CrudeOil', 'Gold')
+
+#******************************************************
+# Function that plot the bar chart
 
 fig, ax = plt.subplots(figsize = (12, 6), dpi =300)
 
@@ -141,8 +143,6 @@ ax.set_xticks(ytd_label + bar_width, index_tickers_tpl)
 ax.set_ylabel("Percentage Change")
 ax.bar_label(rect1, label_type='edge', fmt='%r')
 ax.bar_label(rect2, label_type='edge', fmt='%r')
-
-
 ax.legend()
 
 plt.grid()
